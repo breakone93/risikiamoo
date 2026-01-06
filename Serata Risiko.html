@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="it">
+<head><br><br><br><br><br><br><br>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Grande Sfida a Risiko!</title>
+    <style>
+        /* Impostazioni di base */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #212121;
+            color: #fff;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Animazioni globali */
+        @keyframes pop {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        /* HEADER */
+        header {
+            background-color: #ff5733;
+            color: white;
+            padding: 50px 20px;
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            animation: pop 1s ease-out;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            width: 100%;
+        }
+
+        /* Animazione dei titoli */
+        h2 {
+            font-size: 2rem;
+            color: #fffc03;
+            animation: pop 1.5s ease-out;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Sezione giocatori */
+        .player-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 50px;
+            animation: pop 1.8s ease-out;
+            justify-content: center;
+        }
+
+        .player {
+            background: #ffffff;
+            border-radius: 15px;
+            width: 250px;
+            height: 300px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            opacity: 0.9;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Effetto al passaggio del mouse sui giocatori */
+        .player:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 35px rgba(255, 87, 51, 0.7);
+        }
+
+        .player img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+        }
+
+        .player h3 {
+            margin-top: 15px;
+            font-size: 1.6rem;
+            color: #ff5733;
+            text-transform: capitalize;
+            transition: color 0.3s ease;
+        }
+
+        .player:hover h3 {
+            color: #fffc03;
+        }
+
+        /* Frasi simpatiche per stimolare la sfida */
+        .challenge-phrases {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.5rem;
+            color: #fffc03;
+            font-weight: bold;
+            animation: pop 2s ease-out;
+        }
+
+        .challenge-phrases p {
+            margin: 10px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ff5733;
+            color: white;
+            padding: 15px 0;
+            font-size: 1.1rem;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Parallax Effect */
+        .parallax {
+            background-image: url('background-game.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100vh;
+            animation: parallax 4s infinite linear;
+            width: 100%;
+        }
+
+        @keyframes parallax {
+            0% { background-position: 0 0; }
+            50% { background-position: 100% 0; }
+            100% { background-position: 0 0; }
+        }
+
+        /* Media query per schermi più piccoli */
+        @media (max-width: 768px) {
+            .player-list {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .player {
+                width: 80%;
+                max-width: 350px;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    La Grande Sfida a Risiko!
+</header>
+
+<!-- Parallax Background -->
+<div class="parallax">
+    <div class="container">
+        <h2>Chi Conquisterà il Mondo?</h2>
+        <p>5 Giocatori, una sola missione: Dominare il Mondo! Preparati a vivere una sfida unica!</p>
+
+        <!-- Lista dei giocatori -->
+        <div class="player-list">
+            <div class="player" onclick="alert('Nooo, tranquillo! Da lì non devo passare!')">
+                <img src="https://i.ibb.co/BVxztnyL/images-1.jpg" alt="Bruno">
+                <h3>Bruno</h3>
+            </div>
+            <div class="player" onclick="alert('Non fidatevi di mio marito!')">
+                <img src="https://i.ibb.co/dhjtmgP/jinx-wanted-by-arcanafoundry-dinai08-fullview.jpg" alt="Dodi">
+                <h3>Dodi</h3>
+            </div>
+            <div class="player" onclick="alert('Le carte le tengo, le userò quando ormai sarò morto!')">
+                <img src="https://i.ibb.co/pjQ4j7DP/xp-PYw-Lm.jpg" alt="Stefano">
+                <h3>Stefano</h3>
+            </div>
+            <div class="player" onclick="alert('Finchè non mi si chiude la vena, proverò a conquistare il mondo!')">
+                <img src="https://i.ibb.co/mCrgnN1k/710s6p-O6-Uo-L-AC-UF1000-1000-QL80.jpg" alt="Babu">
+                <h3>Babu</h3>
+            </div>
+            <div class="player" onclick="alert('Metto un pò di carri qua.. Un pò là...')">
+                <img src="https://i.ibb.co/fVYQ9y5c/images.jpg" alt="Ciro">
+                <h3>Ciro</h3>
+            </div>
+        </div>
+
+        <!-- Frasi simpatiche per stimolare la sfida -->
+        <div class="challenge-phrases">
+            <p>💥 La battaglia per la supremazia globale è appena iniziata!</p>
+            <p>🔥 Chi sarà il primo a conquistare il mondo e dominare gli altri?</p>
+            <p>👑 Solo un vero comandante si alzerà trionfante alla fine!</p>
+            <p>⚔️ Riuscirai a difendere il tuo impero? O cederai alla tentazione di fare alleanze?</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>Chi vincerà? La sfida è appena iniziata! 🎲</p>
+</footer>
+
+</body>
+</html>
